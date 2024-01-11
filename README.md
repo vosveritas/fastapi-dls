@@ -74,12 +74,12 @@ See [`examples`](examples) directory for more advanced examples (with reverse pr
 version: '3.9'
 
 x-dls-variables: &dls-variables
-  TZ: Europe/Berlin # REQUIRED, set your timezone correctly on fastapi-dls AND YOUR CLIENTS !!!
-  DLS_URL: localhost # REQUIRED, change to your ip or hostname
+  TZ: America/New_York # REQUIRED, set your timezone correctly on fastapi-dls AND YOUR CLIENTS !!!
+  DLS_URL: 192.168.1.153 # REQUIRED, change to your ip or hostname
   DLS_PORT: 443
   LEASE_EXPIRE_DAYS: 90  # 90 days is maximum
   DATABASE: sqlite:////app/database/db.sqlite
-  DEBUG: false
+  DEBUG: "false"
 
 services:
   dls:
@@ -95,8 +95,8 @@ services:
     logging:  # optional, for those who do not need logs
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 10m
+        max-file: "5"
+        max-size: "10m"
             
 volumes:
   dls-db:
